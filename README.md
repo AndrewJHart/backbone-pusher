@@ -9,12 +9,15 @@ Make your backbone collection listen to real-time data from pusher. Easy to conf
 
 Oh yeah, this needs re-factored, etc.. My current pipeline auto-minifies the assets but I'll minify and upload a dist version soon.
 
+Way more docs coming soon when I have time, thx
+
 Features
 ========
 
 + Automatically adds, updates, and/or removes models from your collection based on the `message` received. e.g. server sends a `add_message` and the plugin will receive that data on the add event listener and update the collection with the new object.
 + Super easy to integrate to an existing Collection. 
 + Filters can be configured in `options` to enable real-time filters based on the models attributes. See __Filters__ below. 
++ Emits special events that you can bind to in other areas of your backbone application for custom behavior.
 
 
 Install & Configure
@@ -33,7 +36,7 @@ In your collection(s) initialize method simply use underscore's `extend` method 
 
         initialize: function() {
             // mixin Backbone-Pusher prototype properties
-            _.extend(this, BackSocket.prototype);
+            _.extend(this, BackbonePusher.prototype);
 
             // use Backbone-Pusher for websockets on this collection
             if (_.isFunction(this.live)) {
