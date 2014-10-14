@@ -93,8 +93,17 @@ e.g. Lets imagine that our collection is wired to an API endpoint for `posts` an
 
 ```
 
+Todos
+=====
+
++ Add to bower registry for easy installation w/ [bower](http://bower.io/)
++ Rename some methods for readability __e.g. change the name of the `live` method to `init`__
++ Add the pure coffee version for [coffee-script](http://coffeescript.org/) lovers
++ __Re-write a more readable__ version in pure javascript (I rarely use coffeescript anymore & `cs` compiled to `js` )
++ Add simple code example (_perhaps a demo w/ django or rails?_) using [pusher's](http://www.pusher.com) __server libs__ to provide  __context__ demonstrating how to use [backbone-pusher](https://github.com/AndrewJHart/backbone-pusher) in a full stack, real-time web application.
+
 
 History
 =======
 
-I started using [pusher's](http://www.pusher.com) real-time WebSockets as a service platform almost 2 years ago. I originally needed a **simple** way of integrating new web & hybrid apps with pre-existing products based on various, older server-side solutions. Pusher made life simpler & after a couple of projects I decided to integrate a more reusable solution for my backbone based projects that needed real-time'y data. Pusher is a great abstraction, the *why* is well explained [here](http://www.leggetter.co.uk/pusher/pusher-presentations/why_use_pusher.html#1) by Phil Leggetter. Further, none of these existing solutions were built on [node](http://www.nodejs.org), I had just a little wiggle room on the server (enough to implement pushers server libs), and implementing a node & socket.io based solution to work in parallel was more complex & costly...(time is money, productivity, blah blah... s'all true I guess and thats all the beancounters care about.. what can you do? ;)  except maybe quit your job, lock yourself in your mom's basement for a year, & hope that idea you're building is worthwhile before she kicks you out)
+I started using [pusher's](http://www.pusher.com) real-time WebSockets as a service platform almost 2 years ago. I originally needed a **simple** way of integrating new web & hybrid apps with pre-existing products based on various, older server-side solutions. Pusher made life simpler & after a couple of projects I decided to integrate a more reusable solution for my backbone based projects that needed real-time'y data. Pusher is a great abstraction, the *why* is well explained [here](http://www.leggetter.co.uk/pusher/pusher-presentations/why_use_pusher.html#1) by Phil Leggetter. Further, none of these existing solutions were built on [node](http://www.nodejs.org), I had just a little wiggle room on the server (enough to implement pushers server libs). Since the solutions still required standard HTTP functionality and/or existing RESTful API's (__GET, POST, PUT__), most of the server implementations were setup to use pusher's websockets libraries __only to push__ fresh data to the clients during database saves/updates - instead of configuring the server to listen for websocket events or the client app to send over websockets.  
