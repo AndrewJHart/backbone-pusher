@@ -39,8 +39,8 @@ In your collection(s) initialize method simply use underscore's `extend` method 
             _.extend(this, BackbonePusher.prototype);
 
             // use Backbone-Pusher for websockets on this collection
-            if (_.isFunction(this.live)) {
-                this.live({
+            if (_.isFunction(this.initialize)) {
+                this.initialize({
                     key: 'pusher-key',
                     channel: 'yourApp',
                     channelSuffix: 'channel',
@@ -76,8 +76,8 @@ e.g. Lets imagine that our collection is wired to an API endpoint for `posts` an
         _.extend(this, BackbonePusher.prototype);
 
         // instantiate Backbone-Pusher for websockets on this collection
-        if (_.isFunction(this.live)) {
-            this.live({
+        if (_.isFunction(this.initialize)) {
+            this.initialize({
                 key: 'pusher-key',
                 channel: 'yourApp',
                 messageSuffix: 'message',
@@ -97,7 +97,7 @@ Todos
 =====
 
 + Add to bower registry for easy installation w/ [bower](http://bower.io/)
-+ Rename some methods for readability __e.g. change the name of the `live` method to `init`__
++ ~~Rename some methods for readability __e.g. change the name of the `live` method to `initialize`__~~
 + Add the pure coffee version for [coffee-script](http://coffeescript.org/) lovers
 + __Re-write a more readable__ version in pure javascript (I rarely use coffeescript anymore & `cs` compiled to `js` )
 + Add simple code example (_perhaps a demo w/ django or rails?_) using [pusher's](http://www.pusher.com) __server libs__ to provide  __context__ demonstrating how to use [backbone-pusher](https://github.com/AndrewJHart/backbone-pusher) in a full stack, real-time web application.
